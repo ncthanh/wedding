@@ -35,6 +35,7 @@ body {
 
 @font-face { font-family: 'Hijrnotes Regular'; src: font-url('Hijrnotes-Regular.otf'); }
 @font-face { font-family: 'Lulo Clean One'; src: font-url('LuloCleanOne-Regular.otf'); }
+@font-face { font-family: 'Adobe Caslon Pro Regular'; src: font-url('ACaslonPro-Regular-Regular.otf'); }
 
 #header {
   display: block;
@@ -80,5 +81,6 @@ body {
   line-height: 15px;
   color: #919191;
   text-align: center;
-  margin-top: 200px;
+  margin: 40px auto;
+  width: 1200px;
 }

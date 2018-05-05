@@ -1,4 +1,30 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
 
+@font-face { font-family: 'Bombshell Pro Regular'; src: font-url('BombshellPro-Regular.ttf'); }
+
+.date {
+  font-family: 'Bombshell Pro Regular';
+}
+
+.intro {
+  font-family: "Adobe Caslon Pro Regular";
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+#clock {
+  font-size: 20px;
+}
+
+.main-pic {
+  width: 1140px;
+  border: solid 8px #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25);
+}
