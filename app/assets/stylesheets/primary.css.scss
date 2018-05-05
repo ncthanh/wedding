@@ -1,0 +1,82 @@
+body {
+  background-color: #f7ede4;
+  margin: 0;
+}
+
+#menu {
+  font-family: "Adobe Caslon Pro Regular";
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  line-height: 15px;
+  text-transform: uppercase;
+}
+
+#menu ul {
+  list-style: none;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #919191;
+}
+
+#menu ul {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+#menu li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+@font-face { font-family: 'Hijrnotes Regular'; src: font-url('Hijrnotes-Regular.otf'); }
+@font-face { font-family: 'Lulo Clean One'; src: font-url('LuloCleanOne-Regular.otf'); }
+
+#header {
+  display: block;
+  width: 1200px;
+  height: 200px;
+  margin: 0 auto;
+  text-align: center;
+  background-image: asset_url('branch.png');
+  background-position: center top, top center;
+  padding-top: 100px;
+}
+
+#header .name {
+  color: #919191;
+  font-family: 'Hijrnotes Regular';
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 4.5px;
+  line-height: 24px;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+#header .separator {
+  color: #919191;
+  font-family: "Lulo Clean One";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  width: 150px;
+  text-align: center;
+  display: inline-block;
+}
+
+#content {
+  font-family: "Adobe Caslon Pro Regular";
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 2.5px;
+  line-height: 15px;
+  color: #919191;
+  text-align: center;
+  margin-top: 200px;
+}
