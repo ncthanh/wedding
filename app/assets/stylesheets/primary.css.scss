@@ -36,6 +36,7 @@ body {
 @font-face { font-family: 'Hijrnotes Regular'; src: font-url('Hijrnotes-Regular.otf'); }
 @font-face { font-family: 'Lulo Clean One'; src: font-url('LuloCleanOne-Regular.otf'); }
 @font-face { font-family: 'Adobe Caslon Pro Regular'; src: font-url('ACaslonPro-Regular-Regular.otf'); }
+@font-face { font-family: 'Adelicia Script Clean Regular'; src: font-url('AdeliciaScriptClean-Regular.otf'); }
 
 #header {
   display: block;
@@ -50,8 +51,8 @@ body {
 
 #header .name {
   color: #919191;
-  font-family: 'Hijrnotes Regular';
-  font-size: 28px;
+  font-family: 'Adelicia Script Clean Regular';
+  font-size: 40px;
   font-style: normal;
   font-weight: 400;
   letter-spacing: 4.5px;
