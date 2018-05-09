@@ -1,0 +1,58 @@
+.slideshow-container
+  - ["IMG_4240.JPG", "IMG_4265.JPG", "IMG_4241.JPG", "IMG_4242.JPG", "IMG_4239.JPG", "IMG_4238.JPG", "IMG_4247.JPG", "IMG_4249.JPG", "IMG_4236.JPG", "IMG_4237.JPG", "IMG_4248.JPG", "IMG_4261.JPG", "IMG_4243.JPG", "IMG_4244.JPG", "IMG_4245.JPG", "IMG_4246.JPG", "IMG_4251.JPG", "IMG_4260.JPG", "IMG_4258.JPG", "IMG_4254.JPG", "IMG_4253.JPG", "IMG_4250.JPG", "IMG_4259.JPG"].each do |img|
+    .mySlides.fade
+      = image_tag img
+  %a.prev{:onclick => "plusSlides(-1)"} ❮
+  %a.next{:onclick => "plusSlides(1)"} ❯
+%br/
+%div{:style => "text-align:center"}
+  - 23.times do |i|
+    %span.dot{:onclick => "currentSlide(#{i+1})"}
+
+:javascript
+  if (!document.audio) {
+    var audio = new Audio('beautiful_in_white.mp3');
+    audio.loop = true;
+    audio.play();
+    document.audio = audio;
+  }
+
+  var slideIndex = 0;
+  showSlides(slideIndex);
+  
+  function carousel() {
+    plusSlides(1)
+  }
+  var timeInt = setInterval(carousel, 10000);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+    clearInterval(timeInt);
+    timeInt = setInterval(carousel, 10000);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+    clearInterval(timeInt);
+    timeInt = setInterval(carousel, 10000);
+  }
+
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1} 
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none"; 
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block"; 
+    dots[slideIndex-1].className += " active";
+  }
+
+  carousel();
