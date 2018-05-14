@@ -75,7 +75,7 @@ body {
   display: inline-block;
 }
 
-#content {
+.content {
   font-family: "Adobe Caslon Pro Regular";
   font-size: 25px;
   font-weight: 400;
@@ -84,6 +84,9 @@ body {
   color: #919191;
   text-align: center;
   margin: 40px auto;
+}
+
+#home-content, #gallery-content {
   width: 1200px;
 }
 
@@ -193,4 +196,12 @@ body {
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
+}
+
+.divider {
+  height: 50px;
+  background-image: asset_url('divider.png');
+  background-size: auto 50px;
+  background-position: center center;
+  background-repeat: repeat-x;
 }
