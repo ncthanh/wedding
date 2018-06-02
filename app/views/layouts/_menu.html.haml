@@ -16,4 +16,33 @@
     %a{:href => "#"}
       Getting there
   %li.tab
-    = link_to "RSVP", rsvp_path
+    %a.rsvp{:href => "#"}
+      RSVP
+
+#rsvpModal.modal
+  .modal-content
+    %span.close
+      &times;
+    %div{:style => "text-align: center; margin: 40px 0; font-family: 'Adelicia Script Clean Regular'; font-size: 50px; font-weight: bold;"}
+      RSVP
+    %div{:style => "text-align: center; margin-bottom: 10px; font-size: 18px;"}
+      We hope you can join us!
+    %div{:style => "text-align: center; margin-bottom: 10px; font-size: 18px;"}
+      Please enter your name below.
+    = form_tag do
+      = text_field_tag 'first_name', nil, placeholder: 'First Name'
+      = text_field_tag 'last_name', nil, placeholder: 'Last Name'
+      = text_field_tag 'email', nil, placeholder: 'Email'
+      %br
+      %br
+      = submit_tag 'Submit'
+
+:javascript
+  $('.rsvp').on('click', function(e) {
+    e.preventDefault();
+    $('#rsvpModal').css('display', 'block');
+  });
+
+  $('#rsvpModal .close').on('click', function(e) {
+    $('#rsvpModal').css('display', 'none');
+  });
