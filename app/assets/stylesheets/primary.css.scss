@@ -215,8 +215,8 @@ body {
 
 /* Create four equal columns that sits next to each other */
 .column {
-  flex: 33%;
-  max-width: 33%;
+  flex: 25%;
+  max-width: 25%;
   padding: 0 4px;
 }
 
@@ -253,7 +253,8 @@ body {
 .modal-content {
     margin: auto;
     display: block;
-    width: 80%;
+    width: 700px;
+    height: 498px;
     max-width: 700px;
 }
 
@@ -353,5 +354,17 @@ body {
     padding: 8px 20px;
     margin-top: 15px;
     margin-bottom: 15px;
-  }  
+  }
+
+  input[type="submit"] { 
+    cursor: pointer;
+  }
+  
+  .message {
+    display: none;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 200px;
+    font-weight: bolder;
+  }
 }

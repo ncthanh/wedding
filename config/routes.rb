@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   # resource :gallery, only: [:show]
   # resource :rsvp, only: [:show]
   get 'gallery' => 'galleries#show_v2'
+  post 'rsvp' => 'rsvps#submit'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

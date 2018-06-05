@@ -4,13 +4,16 @@
   .slideshow-container
     .row
       .column
-        - images[0...8].each do |img|
+        - images[0...6].each do |img|
           = image_tag img
       .column
-        - images[8...14].each do |img|
+        - images[6...10].each do |img|
           = image_tag img
       .column
-        - images[14...23].each do |img|
+        - images[10...16].each do |img|
+          = image_tag img
+      .column
+        - images[16...23].each do |img|
           = image_tag img
 
 #myModal.modal

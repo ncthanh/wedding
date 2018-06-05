@@ -1,5 +1,7 @@
 class RsvpsController < ApplicationController
 
-  def show
+  def submit
+    MyMailer.rsvp(params).deliver_now
+    head :ok
   end
 end

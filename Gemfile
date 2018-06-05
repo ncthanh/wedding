@@ -46,3 +46,5 @@ group :development do
 end
 
 gem 'haml'
+
+gem 'pry'
