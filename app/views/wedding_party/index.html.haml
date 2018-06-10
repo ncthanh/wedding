@@ -1,0 +1,41 @@
+:ruby
+  names = [
+    'Franklin Nwagwu - man of honor',
+    'Hong Tran - bridesmaid',
+    'Nina Tran - bridesmaid',
+    'Nhi Vo - bridesmaid',
+    'Ngoc Vo - bridesmaid',
+    'Vorawut Patanasin - Best man',
+    'Sami Jabban - Groomsman',
+    'Markus Kantarci - Groomsman',
+    'Jason Deloach - Groomsman',
+    'Mike Le - Groomsman'
+    ]
+  descriptions = [
+    'Ex-coworker as well as BFF of the bride. Loves taking shower every early morning before work. Definitely craving chicken, but coffee hater.',
+    'Younger sister of the bride. Boba milktea lover, but dog hater. Hopes to one day over fear dogs.',
+    'Oldest niece of the bride. Just graduated from high school. Wants to be a nurse in future. Cutie with one doggie.',
+    'Cousin of the bride. Currently emotionally invested in Westworld.',
+    'Cousin of the bride. Likes dancing in her freetime.',
+    'To be filled ...',
+    'Friend of the groom. Hype things up and midly racist.',
+    'Friend of the groom. White guy who loves Vietnamese eggrolls. Looks stoned when smiling.',
+    'Best token black friend as well as little bro of the groom. Real life Steve Urkel lol.',
+    'Friend as well as little bro of the groom. No chill pill. Natta. Period lol.'
+  ]
+#our-story-content.content.party
+  %br
+  .intro.our-story
+    BRIDAL PARTY
+  = image_tag "branch_v3.png", class: "branch_v3"
+  .story
+    - (0..9).each do |i|
+      .wrapper
+        .info
+          .party-name
+            = names[i].split(" - ")[0]
+          .title
+            = names[i].split(" - ")[1]
+          .description
+            = descriptions[i]
+        = image_tag "image1#{i+1}.jpg", class: "photo", alt: "  To be filled ..."
