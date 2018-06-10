@@ -48,3 +48,5 @@ end
 gem 'haml'
 
 gem 'pry'
+
+gem 'sendgrid-ruby'
