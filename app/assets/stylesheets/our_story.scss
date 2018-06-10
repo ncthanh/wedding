@@ -1,0 +1,35 @@
+// Place all the styles related to the OurStory controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.branch_v2 {
+  width: 100px;
+  z-index: -2;
+  position: relative;
+  vertical-align: middle;
+  margin: 0 50px;
+}
+
+.branch_v3 {
+  width: 220px;
+  margin-top: 20px;
+}
+
+.story {
+  text-align: left;
+  line-height: normal;
+  letter-spacing: 1px;
+  font-size: 20px;
+  width: 900px;
+  margin: 0 auto;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.time-line {
+  font-weight: bolder;
+}
+
+.our-story {
+  font-size: 24px;
+}

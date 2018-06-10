@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'our_story/index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -9,6 +11,8 @@ Rails.application.routes.draw do
   # resource :rsvp, only: [:show]
   get 'gallery' => 'galleries#show_v2'
   post 'rsvp' => 'rsvps#submit'
+  get 'our_story' => 'our_story#index'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

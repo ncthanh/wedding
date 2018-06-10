@@ -50,30 +50,42 @@ body {
   padding-top: 100px;
 }
 
-#header .name {
-  color: #919191;
-  font-family: 'Adelicia Script Clean Regular';
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 400;
-  letter-spacing: 4.5px;
-  line-height: 24px;
-  width: 150px;
+#header-v2 {
+  display: block;
+  width: 1200px;
+  margin: 0 auto;
   text-align: center;
-  display: inline-block;
-  vertical-align: middle;
+  padding-top: 20px;
 }
 
-#header .separator {
-  color: #919191;
-  font-family: "Lulo Clean One";
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  width: 150px;
-  text-align: center;
-  display: inline-block;
+
+#header, #header-v2 {
+ .name {
+    color: #919191;
+    font-family: 'Adelicia Script Clean Regular';
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 4.5px;
+    line-height: 24px;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .separator {
+    color: #919191;
+    font-family: "Lulo Clean One";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+  }
 }
+
 
 .content {
   font-family: "Adobe Caslon Pro Regular";
@@ -86,7 +98,7 @@ body {
   margin: 40px auto;
 }
 
-#home-content, #gallery-content {
+#home-content, #gallery-content, #our-story-content {
   width: 1200px;
 }
 

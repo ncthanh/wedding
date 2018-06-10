@@ -7,9 +7,15 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    #header
+    - if controller_name == "home"
       = render "layouts/header"
+    - else
+      = render "layouts/header_v2"
     #menu
       = render "layouts/menu"
     #content
+      - unless controller_name == "home"
+        .divider
       = yield
+      - unless controller_name == "home"
+        .divider
