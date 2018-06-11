@@ -9,13 +9,13 @@
     .row
       .column
         - images[1...7].each do |img|
-          = image_tag img
+          = image_tag img, :style => "margin-bottom: 38px"
       .column
         - images[7...11].each do |img|
-          = image_tag img
+          = image_tag img, :style => "margin-bottom: 46px"
       .column
         - images[11...16].each do |img|
-          = image_tag img
+          = image_tag img, :style => "margin-bottom: 43px"
       .column
         - images[16...23].each do |img|
           = image_tag img
@@ -26,13 +26,6 @@
   %img#img01.modal-content
 
 :javascript
-  if (!document.audio) {
-    var audio = new Audio('beautiful_in_white.mp3');
-    audio.loop = true;
-    audio.play();
-    document.audio = audio;
-  }
-
   $('.column img').on('click', function(e){
     $('#myModal').css('display', 'block');
     $('#img01').attr('src', $(e.target).attr('src'));

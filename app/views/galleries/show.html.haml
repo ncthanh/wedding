@@ -11,13 +11,6 @@
       %span.dot{:onclick => "currentSlide(#{i+1})"}
 
 :javascript
-  if (!document.audio) {
-    var audio = new Audio('beautiful_in_white.mp3');
-    audio.loop = true;
-    audio.play();
-    document.audio = audio;
-  }
-
   var slideIndex = 0;
   showSlides(slideIndex);
   

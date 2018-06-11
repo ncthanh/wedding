@@ -18,6 +18,9 @@
   %li.tab
     %a.rsvp{:href => "#"}
       RSVP
+  %li.tab
+    %a.music{:href => "#"}
+      Click for Music!
 
 #rsvpModal.modal
   .modal-content
@@ -56,3 +59,14 @@
     $('#rsvpModal .my_form').css('display', 'none');
     $('#rsvpModal .message').css('display', 'block');
   });
+
+  if (!document.audio) {
+    $(".music").on("click", function(){
+      var audio = new Audio('beautiful_in_white.mp3');
+      audio.loop = true;
+      audio.play();
+      document.audio = audio;
+    });
+  } else {
+    $(".music").hide();
+  }
