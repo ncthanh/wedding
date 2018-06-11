@@ -61,11 +61,13 @@
   });
 
   if (!document.audio) {
-    $(".music").on("click", function(){
+    $(".music").on("click", function(e){
       var audio = new Audio('beautiful_in_white.mp3');
       audio.loop = true;
       audio.play();
       document.audio = audio;
+      $(".music").hide();
+      e.preventDefault();
     });
   } else {
     $(".music").hide();
