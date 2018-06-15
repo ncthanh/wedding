@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'wedding_events/index'
+
   get 'wedding_party/index'
 
   get 'our_story/index'
@@ -16,6 +18,7 @@ Rails.application.routes.draw do
   post 'rsvp' => 'rsvps#submit'
   get 'our_story' => 'our_story#index'
   get 'wedding_party' => 'wedding_party#index'
+  get 'wedding_events' => 'wedding_events#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
