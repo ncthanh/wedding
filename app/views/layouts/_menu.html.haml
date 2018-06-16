@@ -60,12 +60,14 @@
     $('#rsvpModal .message').css('display', 'block');
   });
 
+  
   if (!document.audio) {
+    var audio = new Audio('output.mp3');
+    audio.loop = true;
+    document.audio = audio;
+
     $(".music").on("click", function(e){
-      var audio = new Audio('beautiful_in_white.mp3');
-      audio.loop = true;
       audio.play();
-      document.audio = audio;
       $(".music").hide();
       e.preventDefault();
     });
