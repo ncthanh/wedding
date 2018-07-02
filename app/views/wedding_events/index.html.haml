@@ -30,7 +30,7 @@
   %br
   %div Silver Creek Valley Country Club
   %br
-  %div 5460 Country Club Pkwy, San Jose, CA 95138
+  %div 5460 Country Club Pkwy, San Jose, CA 95138.
   .story
     %p The retro-royal Chaboya Lounge is a perfect setting for cocktails and after party. The elegance of the grand staircase and artful dimed skylight welcome guests.
 
@@ -40,69 +40,71 @@
   %br
   %br
   %br
-  .intro.our-story
-    Accommodations
   %br
-  %br
-  %div Mineta San Jose International Airport.
-  %br
-  %div 1701 Airport Blvd, San Jose, CA
-  %br
-
-  %div Wyndham Garden San Jose Silicon Valley
-  %br
-  %div 399 Silicon Valley Blvd, San Jose, CA 95138
-  %br
-  .story
-    %p Approximately 1.9 miles away from Silver Creek Valley Country Club. The hotel has a 3.5 star-rating. Room rates range from $169 to $299. 
-
-    %p Check out more hotels near Silver Creek Valley Country Club at:
-    %p http://www.thehotelnexus.com/hotels-near-landmark/Silver%20Creek%20Valley%20Country%20Club/tgn_1539
-
   %br
   %br
   .intro.our-story
-    Things to Do
+    Getting there
+  = image_tag "branch_v3.png", class: "branch_v3"
   %br
   %br
   %br
-  %div Santana Row
   %br
-  %div 377 Santana Row, San Jose, CA 95128, USA
-  %br
-  .story
-    %p Good place to hang out, listen to live musics, shopping, eat good foods, you name it !
-  
-  %br
-  %div San Jose Vietnam Town
-  %br
-  %div 909-999 Story Rd, San Jose, CA 95122, USA
-  %br
-  .story
-    %p The plaza where you can find a variety of Vietnamese foods and desserts!
+  #map
+  = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAzJELXKTTMOEz_DPYNoVbtNtcMCbnCGh8&callback=initMap', :defer => "defer", :async => true
 
-  %br
-  %div Filoli Historic House & Garden
-  %br
-  %div 86 Canada Road, Woodside, CA 94062
-  .story
-    %p Nature discovery. Check out for bloom with a variety of flowers. 
+:javascript
+  function initMap() {
+    var uluru = {lat: -25.344, lng: 131.036};
+    var map = new google.maps.Map(
+    document.getElementById('map'), {zoom: 10, center: uluru});
+    var marker = new google.maps.Marker({position: uluru, map: map});
+    var geocoder = new google.maps.Geocoder();
 
-  %br
-  %div Palace of Fine Arts Theatre
-  %br
-  %div 3301 Lyon St, San Francisco, CA 94123, USA
-  %br
-  .story
-    %p The Palace of Fine Arts in the Marina District of San Francisco, CA, is a monumental structure originally constructed for the 1915 Panama-Pacific Exposition in order to exhibit works of art presented there. 
-    %p A great place to take picture! 
-    %p Approximately an hour away from San Jose!
+    var bride = '<div style="width:300px;">'+
+    '<h1>Bride\’s</h1>'+
+    '<div>'+
+    '<p>319 Checkers Dr, APT 104, San Jose, CA 95133.</p>'+
+    '</div>'+
+    '</div>';
 
-  %br
-  %div Golden Gate Bridge
-  %br
-  %div Golden Gate Bridge, San Francisco, CA, USA
-  %br
-  .story
-    %p There are 2 vista points where people stop and take pictures, the first stop before crossing the bridge has information about the bridge (when and how it was made, etc.). The other stop let you take close-up picture with the bridge. 
-    %p After crossing the bridge, if you make the U-turn, there is an exit that take you to the Marin Headlands, where you can see the whole San Francisco from the top of a mountain. 
+    var groom = '<div style="width:300px;">'+
+    '<h1>Groom\'s</h1>'+
+    '<div>'+
+    '<p>130 Ferrari Ave, San Jose, CA 95110.</p>'+
+    '</div>'+
+    '</div>';
+
+    var reception = '<div style="width:300px;">'+
+    '<h1>Silver Creek Valley Country Club</h1>'+
+    '<div>'+
+    '<p>5460 Country Club Pkwy, San Jose, CA 95138.</p>'+
+    '</div>'+
+    '</div>';
+
+    if (geocoder) {
+        [
+          ['319 Checkers Dr, APT 104, San Jose, CA 95133', bride, 'Bride\'s'], 
+          ['130 Ferrari Ave, San Jose, CA 95110.', groom, 'Groom\'s'],
+          ['5460 Country Club Pkwy, San Jose, CA 95138.', reception, 'Reception']].forEach(function(address){
+            console.log(address[0]);
+            geocoder.geocode( {'address': address[0]}, function(results, status) {
+              map.setCenter(results[0].geometry.location);
+
+              var infowindow = new google.maps.InfoWindow(
+                  { content: '<b>' + address[1] + '</b>',
+                    size: new google.maps.Size(150,50)
+                  });
+
+              var marker = new google.maps.Marker({
+                  position: results[0].geometry.location,
+                  map: map, 
+                  title: address[2]
+              }); 
+              google.maps.event.addListener(marker, 'click', function() {
+                  infowindow.open(map,marker);
+              });
+            });
+        });
+      }
+  }
