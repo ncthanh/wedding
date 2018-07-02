@@ -51,7 +51,7 @@
   %br
   %br
   #map
-  = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAzJELXKTTMOEz_DPYNoVbtNtcMCbnCGh8&callback=initMap', :defer => "defer", :async => true
+  = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['MAP_KEY']}&callback=initMap", :defer => "defer", :async => true
 
 :javascript
   function initMap() {
@@ -87,7 +87,6 @@
           ['319 Checkers Dr, APT 104, San Jose, CA 95133', bride, 'Bride\'s'], 
           ['130 Ferrari Ave, San Jose, CA 95110.', groom, 'Groom\'s'],
           ['5460 Country Club Pkwy, San Jose, CA 95138.', reception, 'Reception']].forEach(function(address){
-            console.log(address[0]);
             geocoder.geocode( {'address': address[0]}, function(results, status) {
               map.setCenter(results[0].geometry.location);
 
