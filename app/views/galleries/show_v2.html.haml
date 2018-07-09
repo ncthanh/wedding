@@ -1,4 +1,4 @@
-- images = ["IMG_4240.JPG", "IMG_4265.JPG", "IMG_4241.JPG", "IMG_4242.JPG", "IMG_4239.JPG", "IMG_4238.JPG", "IMG_4247.JPG", "IMG_4249.JPG", "IMG_4236.JPG", "IMG_4237.JPG", "IMG_4248.JPG", "IMG_4261.JPG", "IMG_4243.JPG", "IMG_4244.JPG", "IMG_4245.JPG", "IMG_4246.JPG", "IMG_4251.JPG", "IMG_4260.JPG", "IMG_4258.JPG", "IMG_4254.JPG", "IMG_4253.JPG", "IMG_4250.JPG", "IMG_4259.JPG"]
+- images = ["IMG_4240.JPG", "IMG_4265.JPG", "IMG_4241.JPG", "IMG_4242.JPG", "IMG_4239.JPG", "IMG_4238.JPG", "IMG_4247.JPG", "IMG_4249.JPG", "IMG_4243.JPG", "IMG_4236.JPG", "IMG_4237.JPG", "IMG_4248.JPG", "IMG_4261.JPG", "IMG_4244.JPG", "IMG_4245.JPG", "IMG_4246.JPG", "IMG_4251.JPG", "IMG_4260.JPG", "IMG_4258.JPG", "IMG_4254.JPG", "IMG_4253.JPG", "IMG_4250.JPG", "IMG_4259.JPG", "IMG_5316.JPG", "IMG_5317.JPG", "IMG_5318.JPG", "IMG_5319.JPG", "IMG_5320.JPG", "IMG_5321.JPG"]
 
 #gallery-content.content
   %br
@@ -8,17 +8,17 @@
   .slideshow-container
     .row
       .column
-        - images[1...7].each do |img|
+        - images[1...9].each do |img|
+          = image_tag img, :style => "margin-bottom: 0px"
+      .column
+        - images[9...13].each do |img|
           = image_tag img, :style => "margin-bottom: 38px"
       .column
-        - images[7...11].each do |img|
-          = image_tag img, :style => "margin-bottom: 46px"
+        - images[13...21].each do |img|
+          = image_tag img, :style => "margin-bottom: 3px"
       .column
-        - images[11...16].each do |img|
-          = image_tag img, :style => "margin-bottom: 43px"
-      .column
-        - images[16...23].each do |img|
-          = image_tag img
+        - images[21...29].each do |img|
+          = image_tag img, :style => "margin-bottom: 6px"
 
 #myModal.modal
   %span.close
